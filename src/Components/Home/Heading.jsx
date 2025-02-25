@@ -8,6 +8,7 @@ import {
   faInstagram,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router";
 
 const Header = () => {
   return (
@@ -16,21 +17,21 @@ const Header = () => {
         <Row className="justify-content-between align-items-center topbar">
           <Col xs="auto" className="top-info">
             <small className="me-3 text-white-50">
-              <a href="#">
+              <Link href="#">
                 <FontAwesomeIcon
                   icon={faMapMarkerAlt}
                   className="me-2 text-secondary"
                 />
-              </a>
+              </Link>
               23 Ranking Street, New York
             </small>
             <small className="me-3 text-white-50">
-              <a href="#">
+              <Link href="#">
                 <FontAwesomeIcon
                   icon={faEnvelope}
                   className="me-2 text-secondary"
                 />
-              </a>
+              </Link>
               Email@Example.com
             </small>
           </Col>
