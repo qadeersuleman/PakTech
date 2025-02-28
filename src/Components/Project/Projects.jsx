@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt, faExpand } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion";
 
 const ImageData = [
   {
     ImagePath: "img/project-1.jpg",
     ImageTitle: "Web Development",
-    ImageSubTitle: "Ecommerce website built by our Site",
+    ImageSubTitle: "Ecommerce website",
     ProjectUrl: "https://example.com/project-1",
   },
   {
@@ -42,30 +43,11 @@ const ImageData = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delayChildren: 0.5, // Increased delay for children
-      staggerChildren: 0.4, // Increased stagger for children
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1, // Increased duration for each item
-    },
-  },
-};
-
 export default function Projects() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <div className="container-fluid project py-5 mb-5">
       <div className="container">
@@ -73,23 +55,14 @@ export default function Projects() {
           <h5 className="text-primary">Our Project</h5>
           <h1>Our Recently Completed Projects</h1>
         </div>
-        <motion.div
-          className="row g-5"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <div className="row g-5">
           {ImageData.map((item, index) => (
-            <motion.div
-              className="col-md-6 col-lg-4"
-              key={index}
-              variants={itemVariants}
-            >
+            <div className="col-md-6 col-lg-4" key={index} data-aos="fade-up">
               <div className="project-item position-relative">
                 <div className="project-img">
                   <img
                     src={item.ImagePath}
-                    className="img-fluid w-100 rounded"
+                    className="img-fluid w-100 rounded "
                     alt={item.ImageTitle}
                   />
                   <div className="project-content position-absolute top-50 start-50 translate-middle">
@@ -122,9 +95,9 @@ export default function Projects() {
                   <p className="m-0 text-dark">{item.ImageSubTitle}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

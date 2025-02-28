@@ -9,7 +9,7 @@ import Projects from "./Project/Projects";
 import Team from "./Project/Team";
 import Testimonials from "./Testimonials";
 import Contact from "./About/Contact";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 // import TermsCondition from "./Terms/Terms_Condition";
 
 export default function Main() {
@@ -24,7 +24,7 @@ export default function Main() {
       <Team />
       <Testimonials />
       <Contact />
-      {/* <Footer /> */}
+      
       {/* <TermsCondition /> */}
     </div>
   );

@@ -6,7 +6,7 @@ import { Carousel, Button, Container } from "react-bootstrap";
 
 const FrontpageComponent = () => {
   return (
-    <div className="container-fluid px-0">
+    <div className="container-fluid px-0" style={{ marginTop: -25 }}>
       <Carousel id="carouselId" fade>
         <Carousel.Item>
           <img

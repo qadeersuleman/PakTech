@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function AboutUs(props) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <section
       className="container-fluid pb-5 mb-5 mt-3"
@@ -10,11 +15,10 @@ function AboutUs(props) {
     >
       <div className="container pt-5">
         <div className="row g-5">
-          <motion.div
+          <div
             className="col-lg-5 col-md-6 col-sm-12"
-            initial={{ opacity: 0, x: -150 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            data-aos="fade-right"
+            data-aos-duration="1000"
           >
             <div className="h-100 position-relative">
               <img
@@ -34,12 +38,11 @@ function AboutUs(props) {
                 />
               </div>
             </div>
-          </motion.div>
-          <motion.div
+          </div>
+          <div
             className="col-lg-7 col-md-6 col-sm-12"
-            initial={{ opacity: 0, x: 200 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            data-aos="fade-left"
+            data-aos-duration="1000"
           >
             <h5 className="text-primary">About PakTech</h5>
             <h1 className="mb-4">
@@ -66,7 +69,7 @@ function AboutUs(props) {
             >
               Get in Touch
             </Link>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

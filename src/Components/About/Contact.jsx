@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Contact() {
   return (
@@ -25,13 +25,14 @@ export default function Contact() {
                 </div>
                 <div className="ms-3">
                   <h4 className="text-primary">Address</h4>
-                  <Link
+                  <a
                     href="https://goo.gl/maps/Zd4BCynmTb98ivUJ6"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="h6"
                   >
                     Defense Phase-II, Karachi
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -45,13 +46,14 @@ export default function Contact() {
                 </div>
                 <div className="ms-3">
                   <h4 className="text-primary">Call Us</h4>
-                  <Link
+                  <a
                     className="h6"
                     href="tel:+092302-3466105"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     +92 302 3466 105
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -65,13 +67,14 @@ export default function Contact() {
                 </div>
                 <div className="ms-3">
                   <h4 className="text-primary">Email Us</h4>
-                  <Link
+                  <a
                     className="h6"
                     href="mailto:info@example.com"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     PakTech@net.com
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
